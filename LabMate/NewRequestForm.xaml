@@ -1,0 +1,203 @@
+﻿<UserControl x:Class="LabMate.NewRequestForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LabMate"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="1000">
+    <Grid Background="LightGray">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50px"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        
+        <!-- HEADER -->
+        <Border Grid.Row="0" Background="White" BorderThickness="1">
+            <Grid  Background="#28283c">
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="/images/IconNewRequest.png" Width="20" Margin="5 0"/>
+                    <TextBlock FontSize="18" Foreground="White" FontWeight="DemiBold">New Request</TextBlock>
+                </WrapPanel>
+            </Grid>
+        </Border>
+
+        <!-- LAB REF NO -->
+        <Border Grid.Row="1" Margin="28 0" BorderThickness="0 0 0 1" BorderBrush="DarkGray">
+            <WrapPanel Margin="0 10">
+                <Label HorizontalAlignment="Right" VerticalAlignment="Center" Content="Lab Ref No."/>
+                <TextBox Name="labRefNoTxtbox" Width="150" Margin="5 10 5 10" VerticalAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Text="*"/>
+            </WrapPanel>
+        </Border>
+        
+        <!-- REQUEST FORM -->
+        <Grid Name="requestFormGrid" Grid.Row="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="55"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="55"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="55"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.Resources>
+                <Style TargetType="TextBox">
+                    <Setter Property="Width" Value="150"/>
+                    <Setter Property="Margin" Value="5 10 5 10"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="DatePicker">
+                    <Setter Property="Width" Value="150"/>
+                    <Setter Property="Margin" Value="5 10 5 10"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="ComboBox">
+                    <Setter Property="Width" Value="150"/>
+                    <Setter Property="Margin" Value="5 10 5 10"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="HorizontalAlignment" Value="Right"/>
+                </Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                </Style>
+
+            </Grid.Resources>
+
+
+
+            <Label Grid.Row="1" Grid.Column="0" Content="H+C No:"/>
+            <TextBox Name="hcNoTxtbox"  Grid.Row="1" Grid.Column="1"/>
+            <TextBlock Grid.Row="1" Grid.Column="2"  Text="*"/>
+
+            <Label Grid.Row="2" Grid.Column="0" Content="Hospital No:"/>
+            <TextBox Name="hospitalNoTxtbox" Grid.Row="2" Grid.Column="1"/>
+
+            <Label Grid.Row="3" Grid.Column="0" Content="Surname:"/>
+            <TextBox Name="surnameTxtbox" Grid.Row="3" Grid.Column="1"/>
+            <TextBlock Grid.Row="3" Grid.Column="2"  Text="*"/>
+
+            <Label Grid.Row="4" Grid.Column="0" Content="Forename:"/>
+            <TextBox Name="forenameTxtbox" Grid.Row="4" Grid.Column="1"/>
+            <TextBlock Grid.Row="4" Grid.Column="2"  Text="*"/>
+
+            <Label Grid.Row="5" Grid.Column="0" Content="Sex:"/>
+            <ComboBox Name="sexCombobox" Grid.Row="5" Grid.Column="1">
+                <ComboBoxItem>Male</ComboBoxItem>
+                <ComboBoxItem>Female</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Grid.Row="5" Grid.Column="2"  Text="*"/>
+
+            <Label Grid.Row="6" Grid.Column="0" Content="Date of Birth:"/>
+            <DatePicker Name="dobDatepicker" Grid.Row="6" Grid.Column="1"/>
+            <TextBlock Grid.Row="6" Grid.Column="2"  Text="*"/>
+
+            <Label Grid.Row="7" Grid.Column="0" Content="Address:"/>
+            <TextBox Name="address1Txtbox" Grid.Row="7" Grid.Column="1"/>
+
+            <Label Grid.Row="8" Grid.Column="0" Content=""/>
+            <TextBox Name="address2Txtbox" Grid.Row="8" Grid.Column="1"/>
+
+            <Label Grid.Row="9" Grid.Column="0" Content=""/>
+            <TextBox Name="address3Txtbox" Grid.Row="9" Grid.Column="1" />
+
+            <Label Grid.Row="10" Grid.Column="0" Content="PostCode:"/>
+            <TextBox Name="postCodeTxtbox" Grid.Row="10" Grid.Column="1"/>
+
+            <Label Grid.Row="1" Grid.Column="3" Content="Hospital:"/>
+            <TextBox Name="hospitalTxtbox" Grid.Row="1" Grid.Column="4"/>
+
+            <Label Grid.Row="2" Grid.Column="3" Content="ConsGp:"/>
+            <TextBox Name="consGpTxtbox" Grid.Row="2" Grid.Column="4"/>
+
+            <Label Grid.Row="3" Grid.Column="3" Content="Ward:"/>
+            <TextBox Name="wardTxtbox" Grid.Row="3" Grid.Column="4"/>
+
+            <Label Grid.Row="4" Grid.Column="3" Content="Specialty:"/>
+            <TextBox Name="specialtyTxtbox" Grid.Row="4" Grid.Column="4"/>
+
+            <Label Grid.Row="1" Grid.Column="6" Content="Specimen Type:"/>
+            <ComboBox Name="specimenTypeCombobox" Grid.Row="1" Grid.Column="7">
+                <ComboBoxItem>Adrenres</ComboBoxItem>
+                <ComboBoxItem>Colbx</ComboBoxItem>
+                <ComboBoxItem>Gipolys</ComboBoxItem>
+                <ComboBoxItem>Adrenres</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Grid.Row="1" Grid.Column="8"  Text="*"/>
+
+            <Label Grid.Row="2" Grid.Column="6" Content="Date of Specimen:"/>
+            <DatePicker Name="specimenDateDatepicker" Grid.Row="2" Grid.Column="7"/>
+            <TextBlock Grid.Row="2" Grid.Column="8"  Text="*"/>
+
+            <Label Grid.Row="3" Grid.Column="6" Content="Date of Receipt:"/>
+            <DatePicker Name="recDateDatepicker" Grid.Row="3" Grid.Column="7"/>
+            <TextBlock Grid.Row="3" Grid.Column="8"  Text="*"/>
+
+            <Label Grid.Row="4" Grid.Column="6" Content="Flag Code:"/>
+            <ComboBox Name="flagCodeCombobox" Grid.Row="4" Grid.Column="7" SelectedIndex="0">
+                <ComboBoxItem>(none)</ComboBoxItem>
+                <ComboBoxItem>Fee Referral</ComboBoxItem>
+                <ComboBoxItem>Non-fee Referral</ComboBoxItem>
+                <ComboBoxItem>WLI</ComboBoxItem>
+            </ComboBox>
+
+            <Label Grid.Row="5" Grid.Column="6" Content="Urgency:"/>
+            <ComboBox Name="urgencyCombobox" Grid.Row="5" Grid.Column="7">
+                <ComboBoxItem>Routine</ComboBoxItem>
+                <ComboBoxItem>Accelerated</ComboBoxItem>
+                <ComboBoxItem>Urgent</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Grid.Row="5" Grid.Column="8"  Text="*"/>
+            
+        </Grid>
+
+
+        <WrapPanel Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20">
+            <WrapPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Width" Value="100"/>
+                    <Setter Property="Padding" Value="10 5"/>
+                    <Setter Property="Margin" Value="15 0"/>
+                </Style>
+            </WrapPanel.Resources>
+            
+            <Button Name="newRequestAcceptBtn" Click="NewRequestAcceptBtn_Click">Accept</Button>
+
+            <Button Name="newRequestCancelBtn" Click="NewRequestCancelBtn_Click">Cancel</Button>
+        </WrapPanel>
+
+    </Grid>
+
+</UserControl>
